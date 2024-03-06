@@ -1,11 +1,13 @@
 import socket
 
+# Printing your machine's name and IPv4 address
 def print_machine_info():
     host_name=socket.gethostname()
     ip_address=socket.gethostbyname(host_name)
     print("Host name: %s" %host_name)
     print("IP address: %s" %ip_address)
 
+# Retrieving a remote machine's IP address
 def get_remote_machine_info():
     remote_host =  'www.google.com'
     try:
