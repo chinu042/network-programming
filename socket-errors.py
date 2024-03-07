@@ -27,7 +27,7 @@ def main():
 
     # First try-except block -- create socket
     try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Here AF_INET refers to the address-family ipv4. The SOCK_STREAM means connection-oriented TCP protocol.
     except socket.error as e:
         print("Error creating socket: %s" %e)
         sys.exit(1)
