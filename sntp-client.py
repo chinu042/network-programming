@@ -16,7 +16,7 @@ def sntp_client():
     data, address = client.recvfrom(1024)
 
     if data:
-        print('Response received from:', address)
+        print('Response received from:', address.decode())
     t = struct.unpack('!12I', data)[10]
     t -= TIME1970
     print('\tTime=%s' % time.ctime(t))
