@@ -10,7 +10,10 @@ ECHO_MSG = 'Hello echo server!'
 
 
 class ForkedClient():
-    """ A client to test forking server"""
+    """A client class for testing the forking server.
+
+    This class provides functionality to initialize a client and send messages to the forking server.
+    """
 
     def __init__(self, ip, port):
         # Create a socket
@@ -19,7 +22,7 @@ class ForkedClient():
         self.sock.connect((ip, port))
 
     def run(self):
-        """ Client playing with the server"""
+        """Client playing with the server"""
         # Send the data to server
         current_process_id = os.getpid()
         print('PID %s Sending echo message to the server : "%s"' %
@@ -31,7 +34,7 @@ class ForkedClient():
         print("PID %s received: %s" % (current_process_id, response[5:]))
 
     def shutdown(self):
-        """ Cleanup the client socket """
+        """Cleanup the client socket"""
         self.sock.close()
 
 
